@@ -1,7 +1,26 @@
 - name: "Demonstrate connecting to switches"
   hosts: all
+  gather_facts: no
 
-tasks:
+  tasks:
+    ###
+    # Collect data
+    #
+    - name: Gather facts (eos)
+      eos_facts:
+      when: ansible_network_os == 'eos'
 
-- debug: var=vars
-- debug: var=hostvars
+    - name: Gather facts (ops)
+      ios_facts:
+      when: ansible_network_os == 'ios'
+
+    - name: Gather facts (vyos)
+      vyos_facts:
+      when: ansible_network_os == 'vyos'
+
+    ###
+    # Demonstrate variables
+    #
+    - name: Display some facts
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
