@@ -1,7 +1,5 @@
-- name: "Demonstrate connecting to switches"
 - hosts: all
 
 tasks:
-
 - debug: var=vars
 - debug: var=hostvars
