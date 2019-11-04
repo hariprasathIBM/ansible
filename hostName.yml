@@ -1,7 +1,14 @@
-- name: "Demonstrate connecting to switches"
+---
+# vars.yml
+#
+# Shows the value of all variables/facts.
+#
+# Example:
+#
+#   ansible-playbook vars.yml -e 'hosts=localhost'
+#
 - hosts: all
-
-tasks:
-
-- debug: var=vars
-- debug: var=hostvars
+ 
+  tasks:
+    - debug: var=vars
+    - debug: var=hostvars
