@@ -1,0 +1,9 @@
+- name: Collect BIG-IP facts
+  bigip_facts:
+    server: 172.30.8.50
+    user: f5lab
+    password: F5Lab0ratory
+    include:
+      - interface
+      - vlan
+  delegate_to: localhost
