@@ -1,0 +1,31 @@
+- name: Collect BIG-IP information
+  bigip_device_info:
+    gather_subset:
+      - interfaces
+      - vlans
+    provider:
+      server: 172.30.8.50
+      user: f5lab
+      password: F5Lab0ratory
+  delegate_to: localhost
+
+- name: Collect all BIG-IP information
+  bigip_device_info:
+    gather_subset:
+      - all
+    provider:
+      server: 172.30.8.50
+      user: f5lab
+      password: F5Lab0ratory
+  delegate_to: localhost
+
+- name: Collect all BIG-IP information except trunks
+  bigip_device_info:
+    gather_subset:
+      - all
+      - "!trunks"
+    provider:
+      server: 172.30.8.50
+      user: f5lab
+      password: F5Lab0ratory
+  delegate_to: localhost
