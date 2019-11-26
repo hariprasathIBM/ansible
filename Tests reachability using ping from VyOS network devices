@@ -1,0 +1,22 @@
+- name: Test reachability to 9.158.182.42
+  vyos_ping:
+    dest: 9.158.182.42
+
+- name: Test reachability to 9.158.182.42 using source and ttl set
+  vyos_ping:
+    dest: 9.158.182.42
+    source: eth0
+    ttl: 128
+
+- name: Test unreachability to 9.158.182.42 using interval
+  vyos_ping:
+    dest: 9.158.182.42
+    interval: 3
+    state: absent
+
+- name: Test reachability to 9.158.182.42 setting count and source
+  vyos_ping:
+    dest: 9.158.182.42
+    source: eth1
+    count: 20
+    size: 512
