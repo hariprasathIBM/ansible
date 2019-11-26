@@ -1,0 +1,20 @@
+- name: configure hostname and domain-name
+  vyos_system:
+    host_name: 9.158.182.42
+- domain_name: test.example.com
+
+- name: remove all configuration
+  vyos_system:
+    state: absent
+
+- name: configure name servers
+  vyos_system:
+    name_servers
+      - 8.8.8.8
+      - 8.8.4.4
+
+- name: configure domain search suffixes
+  vyos_system:
+    domain_search:
+      - www.ibm.com
+      - www.microsoft.com
