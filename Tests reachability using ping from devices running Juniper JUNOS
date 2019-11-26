@@ -1,0 +1,22 @@
+- name: Test reachability to 10.106.0.17
+  junos_ping:
+    dest: 10.106.0.17
+
+- name: Test reachability to 10.106.0.18 using source and size set
+  junos_ping:
+    dest: 10.106.0.18
+    size: 1024
+    ttl: 128
+
+- name: Test unreachability to 10.106.0.17 using interval
+  junos_ping:
+    dest: 10.106.0.17
+    interval: 3
+    state: absent
+
+- name: Test reachability to 10.106.0.18 setting count and interface
+  junos_ping:
+    dest: 10.106.0.18
+    interface: fxp0
+    count: 20
+    size: 512
