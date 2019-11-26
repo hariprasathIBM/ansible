@@ -1,0 +1,34 @@
+name: Set the system auth to TACACS+, default server port
+  bigip_device_auth:
+    type: tacacs
+    authentication: use-all-servers
+    protocol_name: ip
+    secret: secret
+    servers:
+      - 172.30.8.50
+    service_name: ppp
+    state: present
+    use_for_auth: yes
+    provider:
+      password: F5Lab0ratory
+      server: 172.30.8.50
+      user: f5lab
+  delegate_to: localhost
+
+- name: Set the system auth to TACACS+, override server port
+  bigip_device_auth:
+    type: tacacs
+    authentication: use-all-servers
+    protocol_name: ip
+    secret: secret
+    servers:
+      - address: 172.30.8.50
+        port: 1234
+    service_name: ppp
+    use_for_auth: yes
+    state: present
+    provider:
+      password: F5Lab0ratory
+      server: 172.30.8.50
+      user: f5lab
+  delegate_to: localhost
