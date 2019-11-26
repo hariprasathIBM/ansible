@@ -1,0 +1,21 @@
+- name: Add the current device to the "device_trust_group" device group
+  bigip_device_group_member:
+    name: "{{ 172.30.8.50 }}"
+    device_group: device_trust_group
+    provider:
+      password: F5Lab0ratory
+      server: 172.30.8.50
+      user: f5lab
+  delegate_to: localhost
+
+- name: Add the hosts in the current scope to "device_trust_group"
+  bigip_device_group_member:
+    name: "{{ item }}"
+    device_group: device_trust_group
+    provider:
+      password: F5Lab0ratory
+      server: 172.30.8.50
+      user: f5lab
+  loop: "{{ hostvars.keys() }}"
+  run_once: true
+  delegate_to: localhost
