@@ -1,0 +1,30 @@
+# Gather all facts
+- vyos_facts:
+    gather_subset: all
+    gather_network_resources: all
+
+# collect only the config and default facts
+- vyos_facts:
+    gather_subset: config
+
+# collect everything exception the config
+- vyos_facts:
+    gather_subset: "!config"
+
+# Collect only the interfaces facts
+- vyos_facts:
+    gather_subset:
+      - '!all'
+      - '!min'
+    gather_network_resources:
+      - interfaces
+
+# Do not collect interfaces facts
+- vyos_facts:
+    gather_network_resources:
+      - "!interfaces"
+
+# Collect interfaces and minimal default facts
+- vyos_facts:
+    gather_subset: min
+    gather_network_resources: interfaces
