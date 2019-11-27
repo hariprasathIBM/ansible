@@ -1,0 +1,26 @@
+- name: Gather all legacy facts
+  nxos_facts:
+    gather_subset: all
+- name: Gather only the config and default facts
+  nxos_facts:
+    gather_subset:
+      - config
+- name: Do not gather hardware facts
+  nxos_facts:
+    gather_subset:
+      - "!hardware"
+- name: Gather legacy and resource facts
+  nxos_facts:
+    gather_subset: all
+    gather_network_resources: all
+- name: Gather only the interfaces resource facts and no legacy facts
+  nxos_facts:
+    gather_subset:
+      - '!all'
+      - '!min'
+    gather_network_resources:
+      - interfaces
+- name: Gather interfaces resource and minimal legacy facts
+  nxos_facts:
+    gather_subset: min
+    gather_network_resources: interfaces
