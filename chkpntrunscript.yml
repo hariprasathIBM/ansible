@@ -1,0 +1,6 @@
+- name: Run script
+  checkpoint_run_script:
+    script_name: "List root"
+    script: ls -l /
+    targets:
+      - mycheckpointgw
