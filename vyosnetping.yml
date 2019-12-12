@@ -1,4 +1,7 @@
 - name: Test reachability to 9.158.182.42
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   vyos_ping:
     dest: 9.158.182.42
 
