@@ -1,4 +1,7 @@
 - name: Add the current device to the "device_trust_group" device group
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   bigip_device_group_member:
     name: "{{ 172.30.8.50 }}"
     device_group: device_trust_group
