@@ -1,4 +1,7 @@
 - name: collect default set of facts
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_facts:
 
 - name: collect default set of facts and configuration
