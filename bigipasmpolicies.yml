@@ -1,4 +1,8 @@
 - name: Import and activate ASM policy
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   bigip_asm_policy:
     name: new_asm_policy
     file: /root/asm_policy.xml
