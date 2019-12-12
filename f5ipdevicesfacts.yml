@@ -1,4 +1,7 @@
 - name: Collect BIG-IP information
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   bigip_device_info:
     gather_subset:
       - interfaces
