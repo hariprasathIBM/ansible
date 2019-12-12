@@ -1,4 +1,7 @@
 - name: configure top level configuration
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   ios_config:
     lines: hostname {{ inventory_hostname }}
 
