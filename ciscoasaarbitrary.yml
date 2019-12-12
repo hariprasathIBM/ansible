@@ -1,5 +1,8 @@
 ---
 - name: "Show the ASA version"
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   asa_command:
     commands:
       - show version
