@@ -1,5 +1,8 @@
 ---
 - name: configure network object-group
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   asa_og:
     name: ansible_test_0
     group_type: network-object
