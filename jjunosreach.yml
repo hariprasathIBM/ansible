@@ -1,4 +1,7 @@
 - name: Test reachability to 10.106.0.17
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_ping:
     dest: 10.106.0.17
 
