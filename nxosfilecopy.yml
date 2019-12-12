@@ -1,5 +1,8 @@
 # File copy from ansible controller to nxos device
   - name: "copy from server to device"
+    connection: network_cli
+  gather_facts: true
+- hosts: all
     nxos_file_copy:
       local_file: "./test_file.txt"
       remote_file: "test_file.txt"
