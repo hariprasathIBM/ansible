@@ -1,6 +1,9 @@
 # configure ACL ANSIBLE
 - nxos_acl:
     name: ANSIBLE
+      connection: network_cli
+  gather_facts: true
+- hosts: all
     seq: 10
     action: permit
     proto: tcp
