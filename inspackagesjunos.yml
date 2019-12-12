@@ -2,6 +2,9 @@
 # the examples for brevity
 
 - name: install local package on remote device
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_package:
     src: junos-vsrx-12.1X46-D10.2-domestic.tgz
 
