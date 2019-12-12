@@ -1,4 +1,9 @@
 - name: Get access rule facts
+
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   checkpoint_access_rule_facts:
     layer: Network
     name: "Drop attacker"
