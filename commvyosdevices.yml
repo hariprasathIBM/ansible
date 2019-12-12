@@ -1,3 +1,4 @@
+- name : Test Name
 tasks:
   - name: show configuration on ethernet devices eth0 and eth1
     vyos_command:
