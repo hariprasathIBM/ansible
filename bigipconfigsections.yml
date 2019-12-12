@@ -1,4 +1,9 @@
 - name: Save the running configuration of the BIG-IP
+
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   bigip_config:
     save: yes
     provider:
