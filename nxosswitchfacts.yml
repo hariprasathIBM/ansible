@@ -1,4 +1,7 @@
 - name: Gather all legacy facts
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   nxos_facts:
     gather_subset: all
 - name: Gather only the config and default facts
