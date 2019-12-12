@@ -1,4 +1,9 @@
 - name: Publish session
+
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   checkpoint_session:
     uid: 7a13a360-9b24-40d7-acd3-5b50247be33e
     state: published
