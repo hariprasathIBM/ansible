@@ -1,4 +1,7 @@
 - name: configure console logging
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_logging:
     dest: console
     facility: any
