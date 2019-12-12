@@ -1,5 +1,8 @@
 ---
 - name: run show version on remote devices
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   nxos_command:
     commands: show version
 
