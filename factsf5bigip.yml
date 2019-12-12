@@ -1,4 +1,7 @@
 - name: Collect BIG-IP facts
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   bigip_facts:
     server: 172.30.8.50
     user: f5lab
