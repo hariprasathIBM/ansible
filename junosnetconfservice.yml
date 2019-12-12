@@ -1,4 +1,7 @@
 - name: enable netconf service on port 830
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_netconf:
     listens_on: 830
     state: present
