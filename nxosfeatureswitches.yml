@@ -1,4 +1,7 @@
 - name: Ensure lacp is enabled
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   nxos_feature:
     feature: lacp
     state: enabled
