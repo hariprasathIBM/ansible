@@ -1,4 +1,9 @@
 - name: Run script
+
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   checkpoint_run_script:
     script_name: "List root"
     script: ls -l /
