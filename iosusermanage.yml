@@ -1,4 +1,7 @@
 - name: create a new user
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   ios_user:
     name: ansible
     nopassword: True
