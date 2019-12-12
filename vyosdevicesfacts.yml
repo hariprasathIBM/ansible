@@ -1,4 +1,5 @@
 # Gather all facts
+- Name: Test
 - vyos_facts:
     gather_subset: all
     gather_network_resources: all
