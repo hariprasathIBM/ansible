@@ -1,4 +1,7 @@
 - name: configure the remote device
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   vyos_config:
     lines:
       - set system host-name {{ 9.158.182.42 }}
