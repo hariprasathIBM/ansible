@@ -1,3 +1,8 @@
+- Name:Test Name
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
 tasks:
   - name: run show version on remote devices
     ios_command:
