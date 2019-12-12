@@ -1,4 +1,9 @@
 name: Set the system auth to TACACS+, default server port
+
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   bigip_device_auth:
     type: tacacs
     authentication: use-all-servers
