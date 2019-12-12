@@ -1,4 +1,8 @@
 - name: Create host object
+  connection: network_cli
+  gather_facts: true
+- hosts: all
+
   checkpoint_host:
     name: attacker
     ip_address: 192.168.0.15
