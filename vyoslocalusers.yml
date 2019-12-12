@@ -1,4 +1,7 @@
 - name: create a new user
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   vyos_user:
     name: vyatta
     configured_password: vyatta
