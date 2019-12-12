@@ -1,4 +1,7 @@
 - name: configure host logging
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   ios_logging:
     dest: host
     name: 172.16.0.1
