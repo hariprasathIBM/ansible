@@ -1,4 +1,7 @@
 - name: configure hostname and domain name
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   ios_system:
     hostname: ios01
     domain_name: test.example.com
