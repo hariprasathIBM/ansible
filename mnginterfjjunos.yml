@@ -1,4 +1,7 @@
 - name: configure interface
+  connection: network_cli
+  gather_facts: true
+- hosts: all
   junos_interface:
     name: ge-0/0/1
     description: test-interface
