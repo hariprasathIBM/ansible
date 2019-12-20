@@ -1,0 +1,64 @@
+---
+# tasks file for imi_f5
+# Usecases:
+# - LB Pool Status
+# - LB Pool Down
+# - Failover Status
+#
+
+- name: Collect bigip device details
+  bigip_device_facts:
+    gather_subset:
+      - system-info
+      - devices
+      - ltm-pools
+#      - gtm-pools
+    provider: "{{f5_provider}}"
+  check_mode: no
+  register: device_facts
+
+- name: Print facts
+  debug:
+    msg: "{{device_facts}}"
+
+# Multiple GTM pools exist.
+# Probably this is not the requirement
+# gtm_a_pools, gtm_aaaa_pools, gtm_cname_pools, gtm_mx_pools, gtm_naptr_pools, gtm_srv_pools
+#    - name: Print GTM Pool Status
+#      debug:
+#        msg: "Name = {{item.name}}, Enabled = {{item.enabled}}"
+#      with_items: "{{device_facts.gtm_pools}}"
+#      when:
+#        - device_facts.gtm_pools
+#        - device_facts.gtm_pools|length > 0
+
+# LB Pool Status
+- name: No LTM Pools to show
+  debug:
+    msg: "No LTM pools found"
+  when:
+    - not device_facts.ltm_pools or device_facts.ltm_pools|length == 0
+
+- name: Print LTM Pool Status
+  debug:
+    msg: "Name = {{item.name}}, Enabled Status = {{item.enabled_status}}"
+  with_items: "{{device_facts.ltm_pools}}"
+  when:
+    - device_facts.ltm_pools
+    - device_facts.ltm_pools|length > 0
+
+# LB Pool Down
+- name: Print LTM Pool Down
+  debug:
+    msg: "Name = {{item.name}}, Availability Status = {{item.availability_status}}"
+  with_items: "{{device_facts.ltm_pools}}"
+  when:
+    - device_facts.ltm_pools
+    - device_facts.ltm_pools|length > 0
+
+# Failover State
+- name: Print Failover state
+  debug:
+    msg:
+    - "Hostname = {{device_facts.devices[0].hostname}}"
+    - "Failover State = {{device_facts.devices[0].failover_state}}"

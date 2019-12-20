@@ -1,0 +1,781 @@
+2019-12-19 08:35:08,982 p=956 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:35:09,000 p=956 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:35:09,330 p=969 u=root | paramiko [172.30.8.10] starting thread (client mode): 0x6cf1ed68
+2019-12-19 08:35:09,331 p=969 u=root | paramiko [172.30.8.10] Local version/idstring: SSH-2.0-paramiko_2.4.3
+2019-12-19 08:35:10,121 p=969 u=root | paramiko [172.30.8.10] Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2019-12-19 08:35:10,122 p=969 u=root | paramiko [172.30.8.10] Connected (version 2.0, client OpenSSH_5.3)
+2019-12-19 08:35:10,160 p=969 u=root | paramiko [172.30.8.10] kex algos:['ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] server encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] client mac:['hmac-sha1'] server mac:['hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2019-12-19 08:35:10,161 p=969 u=root | paramiko [172.30.8.10] Kex agreed: ecdh-sha2-nistp256
+2019-12-19 08:35:10,162 p=969 u=root | paramiko [172.30.8.10] HostKey agreed: ssh-rsa
+2019-12-19 08:35:10,162 p=969 u=root | paramiko [172.30.8.10] Cipher agreed: aes128-ctr
+2019-12-19 08:35:10,163 p=969 u=root | paramiko [172.30.8.10] MAC agreed: hmac-sha1
+2019-12-19 08:35:10,163 p=969 u=root | paramiko [172.30.8.10] Compression agreed: none
+2019-12-19 08:35:10,523 p=969 u=root | paramiko [172.30.8.10] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2019-12-19 08:35:10,525 p=969 u=root | paramiko [172.30.8.10] Switch to new keys ...
+2019-12-19 08:35:10,880 p=969 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:35:11,042 p=969 u=root | paramiko [172.30.8.10] Authentication type (password) not permitted.
+2019-12-19 08:35:11,042 p=969 u=root | paramiko [172.30.8.10] Allowed methods: ['publickey', 'keyboard-interactive', 'hostbased']
+2019-12-19 08:35:11,201 p=969 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:35:11,961 p=969 u=root | paramiko [172.30.8.10] Authentication (keyboard-interactive) successful!
+2019-12-19 08:35:11,963 p=969 u=root | paramiko [172.30.8.10] [chan 0] Max packet in: 32768 bytes
+2019-12-19 08:35:12,155 p=969 u=root | paramiko [172.30.8.10] [chan 0] Max packet out: 32768 bytes
+2019-12-19 08:35:12,156 p=969 u=root | paramiko [172.30.8.10] Secsh channel 0 opened.
+2019-12-19 08:35:12,319 p=969 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:35:12,478 p=969 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:35:13,916 p=956 u=root |  network_os is set to bigip
+2019-12-19 08:35:35,543 p=956 u=root |  changed: [172.30.8.10]
+2019-12-19 08:35:35,558 p=956 u=root |  TASK [imi_f5 : Print facts] ******************************************************************************************************************************
+2019-12-19 08:35:35,586 p=956 u=root |  ok: [172.30.8.10] => {
+    "msg": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/libexec/platform-python"
+        },
+        "changed": true,
+        "devices": [
+            {
+                "active_modules": [
+                    "Acceleration Manager, VE",
+                    "Advanced Protocols, VE",
+                    "Secure Virtual Keyboard",
+                    "Remote Desktop",
+                    "APM, Web Application",
+                    "PSM, VE",
+                    "DNS Licensed Objects, Unlimited",
+                    "DNS Rate Fallback, Unlimited",
+                    "STP",
+                    "BIG-IP VE, Multicast Routing",
+                    "IPV6 Gateway",
+                    "Crytpo Offload, VE, Tier 1 (25M - 200M)",
+                    "WOM, VE",
+                    "SSL, Forward Proxy, VE",
+                    "CGN, BIG-IP VE, AFM ONLY",
+                    "Machine Certificate Checks",
+                    "DNS Services (LAB)",
+                    "Anti-Virus Checks",
+                    "External Interface and Network HSM, VE",
+                    "Firewall Checks",
+                    "WBA, VE",
+                    "App Tunnel",
+                    "DNS Express",
+                    "Protected Workspace",
+                    "DNS Rate Limit, Unlimited QPS",
+                    "Rate Shaping",
+                    "Ram Cache",
+                    "ASM, VE",
+                    "SDN Services, VE",
+                    "SSL, VE",
+                    "AFM, VE (LAB ONLY - NO ROUTING)",
+                    "Base Endpoint Security Checks",
+                    "Max Compression, VE",
+                    "Routing Bundle, VE",
+                    "Network Access"
+                ],
+                "base_mac_address": "00:50:56:8a:31:f5",
+                "build": "0.0.1645",
+                "chassis_id": "420a4560-6759-dbfd-72695c886655",
+                "chassis_type": "individual",
+                "edition": "Final",
+                "failover_state": "active",
+                "full_path": "/Common/F5-BIGIP-VM1.fg.local",
+                "hostname": "F5-BIGIP-VM1.fg.local",
+                "management_address": "172.30.8.10",
+                "marketing_name": "BIG-IP Virtual Edition",
+                "multicast_address": "any6",
+                "name": "F5-BIGIP-VM1.fg.local",
+                "optional_modules": [
+                    "APC-VE, Introductory",
+                    "APC-VE, Introductory to Medium Upgrade",
+                    "APC-VE, Medium",
+                    "App Mode (TMSH Only, No Root/Bash)",
+                    "IP Intelligence, 1Yr, VE",
+                    "IP Intelligence, 1Yr, VE-200M/VE-25M",
+                    "IP Intelligence, 3Yr, VE",
+                    "IP Intelligence, 3Yr, VE-200M/VE-25M",
+                    "PEM URL Filtering, 1Yr, 200Mbps",
+                    "PEM URL Filtering, 1Yr, VE-10M LAB, 200M",
+                    "PEM URL Filtering, 3Yr, 200Mbps",
+                    "PEM URL Filtering, 3Yr, VE-10M LAB, 200M",
+                    "PEM, Quota Management, VE",
+                    "PEM, VE",
+                    "Secure Web Gateway, 1Yr, VE",
+                    "Secure Web Gateway, 3Yr, VE",
+                    "URL Filtering, 1Yr, VE",
+                    "URL Filtering, 3Yr, VE"
+                ],
+                "platform_id": "Z100",
+                "product": "BIG-IP",
+                "self": "yes",
+                "software_version": "13.0.0",
+                "timezone": "America/Los_Angeles"
+            }
+        ],
+        "failed": false,
+        "ltm_pools": [],
+        "system_info": {
+            "base_mac_address": "00:50:56:8a:31:f5",
+            "chassis_serial": "420a4560-6759-dbfd-72695c886655",
+            "hardware_information": [
+                {
+                    "model": "Virtual disk",
+                    "name": "HD1",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sda"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "129.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Virtual disk",
+                    "name": "HD2",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sdb"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "20.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz",
+                    "name": "cpus",
+                    "type": "base-board",
+                    "versions": [
+                        {
+                            "name": "cache size",
+                            "version": "25600 KB"
+                        },
+                        {
+                            "name": "cores",
+                            "version": "4  (physical:4)"
+                        },
+                        {
+                            "name": "cpu MHz",
+                            "version": "2194.711"
+                        },
+                        {
+                            "name": "cpu sockets",
+                            "version": "4"
+                        },
+                        {
+                            "name": "cpu stepping",
+                            "version": "1"
+                        }
+                    ]
+                }
+            ],
+            "marketing_name": "BIG-IP Virtual Edition",
+            "package_edition": "Final",
+            "package_version": "Build 0.0.1645 - Tue Jan 31 17:52:56 PST 2017",
+            "platform": "Z100",
+            "product_build": "0.0.1645",
+            "product_build_date": "Tue Jan 31 17:52:56 PST 2017",
+            "product_built": 170131175256,
+            "product_changelist": 2100458,
+            "product_code": "BIG-IP",
+            "product_jobid": 786643,
+            "product_version": "13.0.0",
+            "time": {
+                "day": 19,
+                "hour": 8,
+                "minute": 17,
+                "month": 12,
+                "second": 2,
+                "year": 2019
+            },
+            "uptime": 5341492
+        }
+    }
+}
+2019-12-19 08:35:35,603 p=956 u=root |  TASK [imi_f5 : No LTM Pools to show] *********************************************************************************************************************
+2019-12-19 08:35:35,624 p=956 u=root |  ok: [172.30.8.10] => {
+    "msg": "No LTM pools found"
+}
+2019-12-19 08:35:35,642 p=956 u=root |  TASK [imi_f5 : Print LTM Pool Status] ********************************************************************************************************************
+2019-12-19 08:35:35,675 p=956 u=root |  TASK [imi_f5 : Print LTM Pool Down] **********************************************************************************************************************
+2019-12-19 08:35:35,709 p=956 u=root |  TASK [imi_f5 : Print Failover state] *********************************************************************************************************************
+2019-12-19 08:35:35,729 p=956 u=root |  ok: [172.30.8.10] => {
+    "msg": [
+        "Hostname = F5-BIGIP-VM1.fg.local",
+        "Failover State = active"
+    ]
+}
+2019-12-19 08:35:35,732 p=969 u=root | paramiko [172.30.8.10] [chan 0] EOF sent (0)
+2019-12-19 08:35:35,734 p=956 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:35:35,735 p=956 u=root |  172.30.8.10                : ok=4    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2019-12-19 08:35:35,739 p=969 u=root | paramiko [172.30.8.10] EOF in transport thread
+2019-12-19 08:35:35,834 p=964 u=root |  shutdown complete
+2019-12-19 08:36:52,342 p=1012 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:36:52,361 p=1012 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:36:52,693 p=1025 u=root | paramiko [172.30.8.10] starting thread (client mode): 0x73b72f28
+2019-12-19 08:36:52,694 p=1025 u=root | paramiko [172.30.8.10] Local version/idstring: SSH-2.0-paramiko_2.4.3
+2019-12-19 08:36:53,479 p=1025 u=root | paramiko [172.30.8.10] Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2019-12-19 08:36:53,479 p=1025 u=root | paramiko [172.30.8.10] Connected (version 2.0, client OpenSSH_5.3)
+2019-12-19 08:36:53,527 p=1025 u=root | paramiko [172.30.8.10] kex algos:['ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] server encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] client mac:['hmac-sha1'] server mac:['hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2019-12-19 08:36:53,528 p=1025 u=root | paramiko [172.30.8.10] Kex agreed: ecdh-sha2-nistp256
+2019-12-19 08:36:53,528 p=1025 u=root | paramiko [172.30.8.10] HostKey agreed: ssh-rsa
+2019-12-19 08:36:53,529 p=1025 u=root | paramiko [172.30.8.10] Cipher agreed: aes128-ctr
+2019-12-19 08:36:53,530 p=1025 u=root | paramiko [172.30.8.10] MAC agreed: hmac-sha1
+2019-12-19 08:36:53,531 p=1025 u=root | paramiko [172.30.8.10] Compression agreed: none
+2019-12-19 08:36:53,895 p=1025 u=root | paramiko [172.30.8.10] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2019-12-19 08:36:53,896 p=1025 u=root | paramiko [172.30.8.10] Switch to new keys ...
+2019-12-19 08:36:54,255 p=1025 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:36:54,417 p=1025 u=root | paramiko [172.30.8.10] Authentication type (password) not permitted.
+2019-12-19 08:36:54,418 p=1025 u=root | paramiko [172.30.8.10] Allowed methods: ['publickey', 'keyboard-interactive', 'hostbased']
+2019-12-19 08:36:54,579 p=1025 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:36:55,191 p=1025 u=root | paramiko [172.30.8.10] Authentication (keyboard-interactive) successful!
+2019-12-19 08:36:55,192 p=1025 u=root | paramiko [172.30.8.10] [chan 0] Max packet in: 32768 bytes
+2019-12-19 08:36:55,394 p=1025 u=root | paramiko [172.30.8.10] [chan 0] Max packet out: 32768 bytes
+2019-12-19 08:36:55,395 p=1025 u=root | paramiko [172.30.8.10] Secsh channel 0 opened.
+2019-12-19 08:36:55,559 p=1025 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:36:55,721 p=1025 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:36:57,213 p=1012 u=root |  network_os is set to bigip
+2019-12-19 08:37:18,723 p=1012 u=root |  changed: [172.30.8.10]
+2019-12-19 08:37:18,738 p=1012 u=root |  TASK [imi_f5 : Print facts] ******************************************************************************************************************************
+2019-12-19 08:37:18,765 p=1012 u=root |  ok: [172.30.8.10] => {
+    "msg": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/libexec/platform-python"
+        },
+        "changed": true,
+        "devices": [
+            {
+                "active_modules": [
+                    "Routing Bundle, VE",
+                    "STP",
+                    "DNS Express",
+                    "SDN Services, VE",
+                    "IPV6 Gateway",
+                    "SSL, Forward Proxy, VE",
+                    "BIG-IP VE, Multicast Routing",
+                    "Rate Shaping",
+                    "Crytpo Offload, VE, Tier 1 (25M - 200M)",
+                    "CGN, BIG-IP VE, AFM ONLY",
+                    "External Interface and Network HSM, VE",
+                    "DNS Rate Fallback, Unlimited",
+                    "Acceleration Manager, VE",
+                    "SSL, VE",
+                    "DNS Licensed Objects, Unlimited",
+                    "WOM, VE",
+                    "Max Compression, VE",
+                    "PSM, VE",
+                    "Secure Virtual Keyboard",
+                    "Machine Certificate Checks",
+                    "App Tunnel",
+                    "Network Access",
+                    "WBA, VE",
+                    "DNS Rate Limit, Unlimited QPS",
+                    "DNS Services (LAB)",
+                    "Advanced Protocols, VE",
+                    "APM, Web Application",
+                    "Base Endpoint Security Checks",
+                    "Ram Cache",
+                    "ASM, VE",
+                    "Firewall Checks",
+                    "Remote Desktop",
+                    "Anti-Virus Checks",
+                    "Protected Workspace",
+                    "AFM, VE (LAB ONLY - NO ROUTING)"
+                ],
+                "base_mac_address": "00:50:56:8a:31:f5",
+                "build": "0.0.1645",
+                "chassis_id": "420a4560-6759-dbfd-72695c886655",
+                "chassis_type": "individual",
+                "edition": "Final",
+                "failover_state": "active",
+                "full_path": "/Common/F5-BIGIP-VM1.fg.local",
+                "hostname": "F5-BIGIP-VM1.fg.local",
+                "management_address": "172.30.8.10",
+                "marketing_name": "BIG-IP Virtual Edition",
+                "multicast_address": "any6",
+                "name": "F5-BIGIP-VM1.fg.local",
+                "optional_modules": [
+                    "APC-VE, Introductory",
+                    "APC-VE, Introductory to Medium Upgrade",
+                    "APC-VE, Medium",
+                    "App Mode (TMSH Only, No Root/Bash)",
+                    "IP Intelligence, 1Yr, VE",
+                    "IP Intelligence, 1Yr, VE-200M/VE-25M",
+                    "IP Intelligence, 3Yr, VE",
+                    "IP Intelligence, 3Yr, VE-200M/VE-25M",
+                    "PEM URL Filtering, 1Yr, 200Mbps",
+                    "PEM URL Filtering, 1Yr, VE-10M LAB, 200M",
+                    "PEM URL Filtering, 3Yr, 200Mbps",
+                    "PEM URL Filtering, 3Yr, VE-10M LAB, 200M",
+                    "PEM, Quota Management, VE",
+                    "PEM, VE",
+                    "Secure Web Gateway, 1Yr, VE",
+                    "Secure Web Gateway, 3Yr, VE",
+                    "URL Filtering, 1Yr, VE",
+                    "URL Filtering, 3Yr, VE"
+                ],
+                "platform_id": "Z100",
+                "product": "BIG-IP",
+                "self": "yes",
+                "software_version": "13.0.0",
+                "timezone": "America/Los_Angeles"
+            }
+        ],
+        "failed": false,
+        "ltm_pools": [],
+        "system_info": {
+            "base_mac_address": "00:50:56:8a:31:f5",
+            "chassis_serial": "420a4560-6759-dbfd-72695c886655",
+            "hardware_information": [
+                {
+                    "model": "Virtual disk",
+                    "name": "HD1",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sda"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "129.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Virtual disk",
+                    "name": "HD2",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sdb"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "20.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz",
+                    "name": "cpus",
+                    "type": "base-board",
+                    "versions": [
+                        {
+                            "name": "cache size",
+                            "version": "25600 KB"
+                        },
+                        {
+                            "name": "cores",
+                            "version": "4  (physical:4)"
+                        },
+                        {
+                            "name": "cpu MHz",
+                            "version": "2194.711"
+                        },
+                        {
+                            "name": "cpu sockets",
+                            "version": "4"
+                        },
+                        {
+                            "name": "cpu stepping",
+                            "version": "1"
+                        }
+                    ]
+                }
+            ],
+            "marketing_name": "BIG-IP Virtual Edition",
+            "package_edition": "Final",
+            "package_version": "Build 0.0.1645 - Tue Jan 31 17:52:56 PST 2017",
+            "platform": "Z100",
+            "product_build": "0.0.1645",
+            "product_build_date": "Tue Jan 31 17:52:56 PST 2017",
+            "product_built": 170131175256,
+            "product_changelist": 2100458,
+            "product_code": "BIG-IP",
+            "product_jobid": 786643,
+            "product_version": "13.0.0",
+            "time": {
+                "day": 19,
+                "hour": 8,
+                "minute": 18,
+                "month": 12,
+                "second": 45,
+                "year": 2019
+            },
+            "uptime": 5341595
+        }
+    }
+}
+2019-12-19 08:37:18,781 p=1012 u=root |  TASK [imi_f5 : No LTM Pools to show] *********************************************************************************************************************
+2019-12-19 08:37:18,803 p=1012 u=root |  ok: [172.30.8.10] => {
+    "msg": "No LTM pools found"
+}
+2019-12-19 08:37:18,818 p=1012 u=root |  TASK [imi_f5 : Print LTM Pool Status] ********************************************************************************************************************
+2019-12-19 08:37:18,853 p=1012 u=root |  TASK [imi_f5 : Print LTM Pool Down] **********************************************************************************************************************
+2019-12-19 08:37:18,884 p=1012 u=root |  TASK [imi_f5 : Print Failover state] *********************************************************************************************************************
+2019-12-19 08:37:18,905 p=1012 u=root |  ok: [172.30.8.10] => {
+    "msg": [
+        "Hostname = F5-BIGIP-VM1.fg.local",
+        "Failover State = active"
+    ]
+}
+2019-12-19 08:37:18,907 p=1025 u=root | paramiko [172.30.8.10] [chan 0] EOF sent (0)
+2019-12-19 08:37:18,910 p=1012 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:37:18,910 p=1012 u=root |  172.30.8.10                : ok=4    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2019-12-19 08:37:18,932 p=1025 u=root | paramiko [172.30.8.10] EOF in transport thread
+2019-12-19 08:37:19,010 p=1020 u=root |  shutdown complete
+2019-12-19 08:39:16,964 p=1070 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:39:16,982 p=1070 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:39:27,482 p=1070 u=root |  network_os is set to bigip
+2019-12-19 08:39:27,488 p=1070 u=root |  fatal: [172.30.8.10]: FAILED! => {"msg": "timed out"}
+2019-12-19 08:39:27,490 p=1070 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:39:27,490 p=1070 u=root |  172.30.8.10                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:39:27,494 p=1078 u=root |  shutdown complete
+2019-12-19 08:39:45,404 p=1087 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:39:45,422 p=1087 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:39:55,821 p=1087 u=root |  network_os is set to bigip
+2019-12-19 08:39:55,827 p=1087 u=root |  fatal: [172.30.8.10]: FAILED! => {"msg": "timed out"}
+2019-12-19 08:39:55,829 p=1087 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:39:55,830 p=1087 u=root |  172.30.8.10                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:39:55,863 p=1095 u=root |  shutdown complete
+2019-12-19 08:44:49,575 p=1120 u=root |   [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2019-12-19 08:44:56,446 p=1127 u=root |   [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2019-12-19 08:44:56,447 p=1127 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: f5
+
+2019-12-19 08:45:21,086 p=1137 u=root |  ERROR! Missing target hosts
+2019-12-19 08:45:32,925 p=1140 u=root |   [ERROR]: User interrupted execution
+
+2019-12-19 08:46:34,837 p=1154 u=root |  172.30.8.10 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.30.8.10 port 22: Connection timed out",
+    "unreachable": true
+}
+2019-12-19 08:47:59,081 p=1169 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:47:59,101 p=1169 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:48:02,526 p=1169 u=root |  network_os is set to bigip
+2019-12-19 08:48:02,533 p=1169 u=root |  fatal: [bigip]: FAILED! => {"msg": "[Errno -2] Name or service not known"}
+2019-12-19 08:48:02,536 p=1169 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:48:02,536 p=1169 u=root |  bigip                      : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:48:02,576 p=1177 u=root |  shutdown complete
+2019-12-19 08:51:47,041 p=1190 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:51:47,058 p=1190 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:51:47,456 p=1190 u=root |  network_os is set to bigip
+2019-12-19 08:51:47,461 p=1190 u=root |  fatal: [bigip]: FAILED! => {"msg": "[Errno -2] Name or service not known"}
+2019-12-19 08:51:47,464 p=1190 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:51:47,465 p=1190 u=root |  bigip                      : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:51:47,510 p=1198 u=root |  shutdown complete
+2019-12-19 08:52:11,514 p=1207 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:52:11,533 p=1207 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:52:11,925 p=1207 u=root |  network_os is set to bigip
+2019-12-19 08:52:11,931 p=1207 u=root |  fatal: [bigip]: FAILED! => {"msg": "[Errno -2] Name or service not known"}
+2019-12-19 08:52:11,933 p=1207 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:52:11,934 p=1207 u=root |  bigip                      : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:52:11,978 p=1215 u=root |  shutdown complete
+2019-12-19 08:52:43,379 p=1225 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:52:43,401 p=1225 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:52:53,776 p=1225 u=root |  network_os is set to bigip
+2019-12-19 08:52:53,783 p=1225 u=root |  fatal: [172.30.8.10]: FAILED! => {"msg": "timed out"}
+2019-12-19 08:52:53,785 p=1225 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:52:53,786 p=1225 u=root |  172.30.8.10                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-12-19 08:52:53,824 p=1233 u=root |  shutdown complete
+2019-12-19 08:57:54,121 p=1242 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:57:54,140 p=1242 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:57:54,996 p=1242 u=root |   [ERROR]: User interrupted execution
+
+2019-12-19 08:58:04,045 p=1256 u=root |  PLAY [IMI usecases for F5 bigip] *************************************************************************************************************************
+2019-12-19 08:58:04,062 p=1256 u=root |  TASK [imi_f5 : Collect bigip device details] *************************************************************************************************************
+2019-12-19 08:58:04,419 p=1269 u=root | paramiko [172.30.8.10] starting thread (client mode): 0xeefa0f98
+2019-12-19 08:58:04,421 p=1269 u=root | paramiko [172.30.8.10] Local version/idstring: SSH-2.0-paramiko_2.4.3
+2019-12-19 08:58:04,492 p=1250 u=root |  shutdown complete
+2019-12-19 08:58:05,214 p=1269 u=root | paramiko [172.30.8.10] Remote version/idstring: SSH-2.0-OpenSSH_5.3
+2019-12-19 08:58:05,215 p=1269 u=root | paramiko [172.30.8.10] Connected (version 2.0, client OpenSSH_5.3)
+2019-12-19 08:58:05,248 p=1269 u=root | paramiko [172.30.8.10] kex algos:['ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] server encrypt:['aes128-cbc', 'aes256-cbc', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes192-cbc', '3des-cbc'] client mac:['hmac-sha1'] server mac:['hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2019-12-19 08:58:05,249 p=1269 u=root | paramiko [172.30.8.10] Kex agreed: ecdh-sha2-nistp256
+2019-12-19 08:58:05,250 p=1269 u=root | paramiko [172.30.8.10] HostKey agreed: ssh-rsa
+2019-12-19 08:58:05,251 p=1269 u=root | paramiko [172.30.8.10] Cipher agreed: aes128-ctr
+2019-12-19 08:58:05,252 p=1269 u=root | paramiko [172.30.8.10] MAC agreed: hmac-sha1
+2019-12-19 08:58:05,252 p=1269 u=root | paramiko [172.30.8.10] Compression agreed: none
+2019-12-19 08:58:05,607 p=1269 u=root | paramiko [172.30.8.10] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2019-12-19 08:58:05,608 p=1269 u=root | paramiko [172.30.8.10] Switch to new keys ...
+2019-12-19 08:58:05,967 p=1269 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:58:06,128 p=1269 u=root | paramiko [172.30.8.10] Authentication type (password) not permitted.
+2019-12-19 08:58:06,129 p=1269 u=root | paramiko [172.30.8.10] Allowed methods: ['publickey', 'keyboard-interactive', 'hostbased']
+2019-12-19 08:58:06,290 p=1269 u=root | paramiko [172.30.8.10] userauth is OK
+2019-12-19 08:58:06,935 p=1269 u=root | paramiko [172.30.8.10] Authentication (keyboard-interactive) successful!
+2019-12-19 08:58:06,937 p=1269 u=root | paramiko [172.30.8.10] [chan 0] Max packet in: 32768 bytes
+2019-12-19 08:58:07,123 p=1269 u=root | paramiko [172.30.8.10] [chan 0] Max packet out: 32768 bytes
+2019-12-19 08:58:07,124 p=1269 u=root | paramiko [172.30.8.10] Secsh channel 0 opened.
+2019-12-19 08:58:07,287 p=1269 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:58:07,447 p=1269 u=root | paramiko [172.30.8.10] [chan 0] Sesch channel 0 request ok
+2019-12-19 08:58:08,897 p=1256 u=root |  network_os is set to bigip
+2019-12-19 08:58:30,525 p=1256 u=root |  changed: [172.30.8.10]
+2019-12-19 08:58:30,540 p=1256 u=root |  TASK [imi_f5 : Print facts] ******************************************************************************************************************************
+2019-12-19 08:58:30,565 p=1256 u=root |  ok: [172.30.8.10] => {
+    "msg": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/libexec/platform-python"
+        },
+        "changed": true,
+        "devices": [
+            {
+                "active_modules": [
+                    "Protected Workspace",
+                    "DNS Express",
+                    "External Interface and Network HSM, VE",
+                    "BIG-IP VE, Multicast Routing",
+                    "APM, Web Application",
+                    "Base Endpoint Security Checks",
+                    "DNS Services (LAB)",
+                    "AFM, VE (LAB ONLY - NO ROUTING)",
+                    "IPV6 Gateway",
+                    "CGN, BIG-IP VE, AFM ONLY",
+                    "Routing Bundle, VE",
+                    "DNS Licensed Objects, Unlimited",
+                    "Acceleration Manager, VE",
+                    "Crytpo Offload, VE, Tier 1 (25M - 200M)",
+                    "PSM, VE",
+                    "SSL, Forward Proxy, VE",
+                    "App Tunnel",
+                    "Firewall Checks",
+                    "STP",
+                    "Advanced Protocols, VE",
+                    "Anti-Virus Checks",
+                    "ASM, VE",
+                    "SDN Services, VE",
+                    "Max Compression, VE",
+                    "Secure Virtual Keyboard",
+                    "Machine Certificate Checks",
+                    "WOM, VE",
+                    "Ram Cache",
+                    "Network Access",
+                    "WBA, VE",
+                    "Remote Desktop",
+                    "DNS Rate Fallback, Unlimited",
+                    "SSL, VE",
+                    "DNS Rate Limit, Unlimited QPS",
+                    "Rate Shaping"
+                ],
+                "base_mac_address": "00:50:56:8a:31:f5",
+                "build": "0.0.1645",
+                "chassis_id": "420a4560-6759-dbfd-72695c886655",
+                "chassis_type": "individual",
+                "edition": "Final",
+                "failover_state": "active",
+                "full_path": "/Common/F5-BIGIP-VM1.fg.local",
+                "hostname": "F5-BIGIP-VM1.fg.local",
+                "management_address": "172.30.8.10",
+                "marketing_name": "BIG-IP Virtual Edition",
+                "multicast_address": "any6",
+                "name": "F5-BIGIP-VM1.fg.local",
+                "optional_modules": [
+                    "APC-VE, Introductory",
+                    "APC-VE, Introductory to Medium Upgrade",
+                    "APC-VE, Medium",
+                    "App Mode (TMSH Only, No Root/Bash)",
+                    "IP Intelligence, 1Yr, VE",
+                    "IP Intelligence, 1Yr, VE-200M/VE-25M",
+                    "IP Intelligence, 3Yr, VE",
+                    "IP Intelligence, 3Yr, VE-200M/VE-25M",
+                    "PEM URL Filtering, 1Yr, 200Mbps",
+                    "PEM URL Filtering, 1Yr, VE-10M LAB, 200M",
+                    "PEM URL Filtering, 3Yr, 200Mbps",
+                    "PEM URL Filtering, 3Yr, VE-10M LAB, 200M",
+                    "PEM, Quota Management, VE",
+                    "PEM, VE",
+                    "Secure Web Gateway, 1Yr, VE",
+                    "Secure Web Gateway, 3Yr, VE",
+                    "URL Filtering, 1Yr, VE",
+                    "URL Filtering, 3Yr, VE"
+                ],
+                "platform_id": "Z100",
+                "product": "BIG-IP",
+                "self": "yes",
+                "software_version": "13.0.0",
+                "timezone": "America/Los_Angeles"
+            }
+        ],
+        "failed": false,
+        "ltm_pools": [],
+        "system_info": {
+            "base_mac_address": "00:50:56:8a:31:f5",
+            "chassis_serial": "420a4560-6759-dbfd-72695c886655",
+            "hardware_information": [
+                {
+                    "model": "Virtual disk",
+                    "name": "HD1",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sda"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "129.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Virtual disk",
+                    "name": "HD2",
+                    "type": "physical-disk",
+                    "versions": [
+                        {
+                            "name": "Manufacturer",
+                            "version": "VMware"
+                        },
+                        {
+                            "name": "SerialNumber",
+                            "version": "VMware-sdb"
+                        },
+                        {
+                            "name": "Size",
+                            "version": "20.00G"
+                        },
+                        {
+                            "name": "Firmware Version",
+                            "version": "1.0"
+                        },
+                        {
+                            "name": "Media Type",
+                            "version": "HDD"
+                        }
+                    ]
+                },
+                {
+                    "model": "Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz",
+                    "name": "cpus",
+                    "type": "base-board",
+                    "versions": [
+                        {
+                            "name": "cache size",
+                            "version": "25600 KB"
+                        },
+                        {
+                            "name": "cores",
+                            "version": "4  (physical:4)"
+                        },
+                        {
+                            "name": "cpu MHz",
+                            "version": "2194.711"
+                        },
+                        {
+                            "name": "cpu sockets",
+                            "version": "4"
+                        },
+                        {
+                            "name": "cpu stepping",
+                            "version": "1"
+                        }
+                    ]
+                }
+            ],
+            "marketing_name": "BIG-IP Virtual Edition",
+            "package_edition": "Final",
+            "package_version": "Build 0.0.1645 - Tue Jan 31 17:52:56 PST 2017",
+            "platform": "Z100",
+            "product_build": "0.0.1645",
+            "product_build_date": "Tue Jan 31 17:52:56 PST 2017",
+            "product_built": 170131175256,
+            "product_changelist": 2100458,
+            "product_code": "BIG-IP",
+            "product_jobid": 786643,
+            "product_version": "13.0.0",
+            "time": {
+                "day": 19,
+                "hour": 8,
+                "minute": 39,
+                "month": 12,
+                "second": 56,
+                "year": 2019
+            },
+            "uptime": 5342867
+        }
+    }
+}
+2019-12-19 08:58:30,581 p=1256 u=root |  TASK [imi_f5 : No LTM Pools to show] *********************************************************************************************************************
+2019-12-19 08:58:30,604 p=1256 u=root |  ok: [172.30.8.10] => {
+    "msg": "No LTM pools found"
+}
+2019-12-19 08:58:30,622 p=1256 u=root |  TASK [imi_f5 : Print LTM Pool Status] ********************************************************************************************************************
+2019-12-19 08:58:30,656 p=1256 u=root |  TASK [imi_f5 : Print LTM Pool Down] **********************************************************************************************************************
+2019-12-19 08:58:30,688 p=1256 u=root |  TASK [imi_f5 : Print Failover state] *********************************************************************************************************************
+2019-12-19 08:58:30,709 p=1256 u=root |  ok: [172.30.8.10] => {
+    "msg": [
+        "Hostname = F5-BIGIP-VM1.fg.local",
+        "Failover State = active"
+    ]
+}
+2019-12-19 08:58:30,713 p=1269 u=root | paramiko [172.30.8.10] [chan 0] EOF sent (0)
+2019-12-19 08:58:30,717 p=1256 u=root |  PLAY RECAP ***********************************************************************************************************************************************
+2019-12-19 08:58:30,719 p=1256 u=root |  172.30.8.10                : ok=4    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2019-12-19 08:58:30,721 p=1269 u=root | paramiko [172.30.8.10] EOF in transport thread
+2019-12-19 08:58:30,818 p=1264 u=root |  shutdown complete

@@ -1,0 +1,19 @@
+[f5:vars]
+ansible_network_os = bigip
+ansible_user = root
+ansible_password = P@ssw0rd
+#ansible_ssh_common_args = '-o ProxyCommand="nc -vvv --proxy 9.158.182.62:1080 --proxy-type socks5 --proxy-auth rdurvas1:placeholderpassword %h %p"'
+[f5]
+172.30.8.10
+[not_working]
+172.30.8.12
+172.30.8.13
+172.30.8.14
+172.30.8.15
+172.30.8.16
+172.30.8.18
+[working]
+172.30.8.10
+172.30.8.11
+172.30.8.17
+172.30.8.19

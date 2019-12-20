@@ -1,0 +1,8 @@
+---
+- name: IMI usecases for F5 bigip
+  hosts: f5
+  connection: local
+  gather_facts: False
+
+  roles:
+    - { role: imi_f5, }
