@@ -1,0 +1,59 @@
+hosts: 172.30.40.10
+  connection: local
+  become: yes
+  vars_files:
+
+  tasks:
+      nsxt_controller_manager_auto_deployment:
+          hostname: "{{GSE_NW_SDN_Lab}}"
+          username: "{{root}}"
+          password: "{{VMware1!VMware1!}}"
+          validate_certs: False
+          deployment_requests:
+          - roles:
+            - CONTROLLER
+            - MANAGER
+            form_factor: "SMALL"
+            user_settings:
+              cli_password: "VMware1!VMware1!"
+
+hosts: 172.30.40.10 
+  - esxi1a.fglab.local
+  connection: local
+  become: yes
+  vars_files:
+
+  tasks:
+      nsxt_controller_manager_auto_deployment:
+          hostname: "{{GSE_NW_SDN_Lab}}"
+          username: "{{root}}"
+          password: "{{VMware1!VMware1!}}"
+          validate_certs: False
+          deployment_requests:
+          - roles:
+            - CONTROLLER
+            - MANAGER
+            form_factor: "SMALL"
+            user_settings:
+              cli_password: "VMware1!VMware1!"
+              root_password: "VMware1!VMware1!"
+
+            deployment_config:
+              placement_type: VsphereClusterNodeVMDeploymentConfig
+              vc_name: "GSE_NW_1"
+              management_network_id: "network-01a"
+              hostname: "manager1.esxi1a.fglab.local"
+              compute_id: "SDN_NW_domain-1"
+              storage_id: "datastore-1"
+
+          state: present"
+              root_password: "VMware1!VMware1!"
+            deployment_config:
+              placement_type: VsphereClusterNodeVMDeploymentConfig
+              vc_name: "GSE_NW_2"
+              management_network_id: "network-01b"
+              hostname: "manager2.esxi1a.fglab.local"
+              compute_id: "SDN_NW_domain-2"
+              storage_id: "datastore-2"
+
+          state: present
