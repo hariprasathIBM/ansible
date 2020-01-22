@@ -1,4 +1,4 @@
-hosts: 172.30.40.10
+hosts: 172.30.40.8
   connection: local
   become: yes
   vars_files:
@@ -6,8 +6,8 @@ hosts: 172.30.40.10
   tasks:
       nsxt_controller_manager_auto_deployment:
           hostname: "{{GSE_NW_SDN_Lab}}"
-          username: "{{root}}"
-          password: "{{VMware1!VMware1!}}"
+          username: "{{Administrator}}"
+          password: "{{VMware1!}}"
           validate_certs: False
           deployment_requests:
           - roles:
@@ -15,7 +15,7 @@ hosts: 172.30.40.10
             - MANAGER
             form_factor: "SMALL"
             user_settings:
-              cli_password: "VMware1!VMware1!"
+              cli_password: "VMware1!"
 
 hosts: 172.30.40.10 
   - esxi1a.fglab.local
@@ -26,8 +26,8 @@ hosts: 172.30.40.10
   tasks:
       nsxt_controller_manager_auto_deployment:
           hostname: "{{GSE_NW_SDN_Lab}}"
-          username: "{{root}}"
-          password: "{{VMware1!VMware1!}}"
+          username: "{{Administrator}}"
+          password: "{{VMware1!}}"
           validate_certs: False
           deployment_requests:
           - roles:
@@ -35,8 +35,8 @@ hosts: 172.30.40.10
             - MANAGER
             form_factor: "SMALL"
             user_settings:
-              cli_password: "VMware1!VMware1!"
-              root_password: "VMware1!VMware1!"
+              cli_password: "VMware1!"
+              root_password: "VMware1!"
 
             deployment_config:
               placement_type: VsphereClusterNodeVMDeploymentConfig
@@ -47,7 +47,7 @@ hosts: 172.30.40.10
               storage_id: "datastore-1"
 
           state: present"
-              root_password: "VMware1!VMware1!"
+              root_password: "VMware1!"
             deployment_config:
               placement_type: VsphereClusterNodeVMDeploymentConfig
               vc_name: "GSE_NW_2"
